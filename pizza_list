@@ -1,6 +1,6 @@
 '''
 this script helps practice the basic list manipulations
-the scenario is a pizza place trying to origanizing their list of pizzas
+the scenario is a pizza place trying to origanize their list of pizzas
 '''
 #1D lists
 toppings = ["pepperoni", "pineapple", "cheese", "sausage", "olives","anchovies", "mushrooms"]
