@@ -10,3 +10,8 @@ This is a collection of useful mini projects to learn python. Categorized by top
 1. Pizza List
 * this script helps practice the basic list manipulations
 * the scenario is a pizza place trying to origanize their list of pizzas
+
+#### Loops
+1. Haircut Loop
+* practice basic list and loops
+* calculate metrics for a barbershop
