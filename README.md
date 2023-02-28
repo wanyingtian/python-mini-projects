@@ -15,3 +15,7 @@ This is a collection of useful mini projects to learn python. Categorized by top
 1. Haircut Loop
 * practice basic list and loops
 * calculate metrics for a barbershop
+
+#### Functions
+1. Easy Physics Functions
+* some easy functions that help calculate some fundamental physical properties.
