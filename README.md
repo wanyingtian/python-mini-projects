@@ -19,3 +19,13 @@ This is a collection of useful mini projects to learn python. Categorized by top
 #### Functions
 1. Easy Physics Functions
 * some easy functions that help calculate some fundamental physical properties.
+
+#### Strings
+1. Coded Correspondence
+* a codecademy practice project
+* encoding and decoding messages in string manipulations
+
+#### Dictionaries
+1. Scrabble
+* In this project, you will process some data from a group of friends playing scrabble.
+* You will use dictionaries to organize players, words, and points.
