@@ -29,3 +29,6 @@ This is a collection of useful mini projects to learn python. Categorized by top
 1. Scrabble
 * In this project, you will process some data from a group of friends playing scrabble.
 * You will use dictionaries to organize players, words, and points.
+2. Abruptly Goblins Planner
+* a codecademy practice project
+* plan a game night using dictionaries
