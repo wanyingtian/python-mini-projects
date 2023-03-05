@@ -32,3 +32,7 @@ This is a collection of useful mini projects to learn python. Categorized by top
 2. Abruptly Goblins Planner
 * a codecademy practice project
 * plan a game night using dictionaries
+
+#### Classes
+1. Restaurant Class
+* class applications in restaurant origanization
