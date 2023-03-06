@@ -40,8 +40,10 @@ kids = Menu("Kids", {
 }, 11, 21)
 
 #test out string rep in Menu class
+print("- Welcome! Take a look at the brunch menu using string representations")
 print(brunch)
 #test out calculate_bill method in menu Class
+print("- Calculate some bills:")
 print(brunch.calculate_bill(['pancakes','home fries','coffee']))
 print(early_bird.calculate_bill(['salumeria plate','mushroom ravioli (vegan)']))
 
@@ -66,7 +68,9 @@ flagship_store = Franchise("1232 West End Road",[brunch, early_bird, dinner, kid
 new_installment = Franchise("12 East Mulberry Street", [brunch, early_bird, dinner, kids])
 
 #test .available_menus() method
+print("- What menus are available at 12?")
 print(flagship_store.available_menus(12))
+print("- What menus are available at 17?")
 print(flagship_store.available_menus(17))
 
 ## Part 3:  Create Business Class
@@ -96,10 +100,14 @@ arepas_place = Franchise("189 Fitzgerald Avenue", [arepas_menu])
 arepas_business = Business("Take a’ Arepa", [arepas_place])
 
 #test business class
+print("- Take a look at business 1")
 print(basta_fazoolin)
+print("- Take a look at business 2")
 print(arepas_business)
-print(arepas_business.franchise_addresses())
 #test arepas franchise and menu class
+print("- Take a look at arepas franchise")
 print(arepas_place)
+print("- What menu is available at 15:00?")
 print(arepas_place.available_menus(15))
+print("- How much is 2 jamon arepas?")
 print(arepas_menu.calculate_bill(['jamon arepa','jamon arepa']))
