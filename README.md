@@ -36,3 +36,4 @@ This is a collection of useful mini projects to learn python. Categorized by top
 #### Classes
 1. Restaurant Class
 * class applications in restaurant origanization
+* You will create 3 classes and access their methods, and use them to build a new business
