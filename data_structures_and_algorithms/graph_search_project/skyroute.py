@@ -5,6 +5,7 @@ from landmark_choices import landmark_choices
 
 # landmark string that joins all landmarks together 
 landmark_string = ""
+stations_under_construction = ['Burrard']
 for letter, landmark in landmark_choices.items():
   landmark_string += f"{letter} - {landmark}\n"
 
@@ -17,6 +18,7 @@ def skyroute():
   # returns shortest path between landmarks
   greet()
   new_route()
+  goodbye()
 
 def set_start_and_end(start_point, end_point):
   """
@@ -35,10 +37,14 @@ def set_start_and_end(start_point, end_point):
       end_point = get_end()
     else:
       print("Oops, that isn't 'o', 'd', or 'b'...")
-      set_start_and_end(start_point, end_point)
+      return set_start_and_end(start_point, end_point)
   else:
     start_point = get_start()
     end_point = get_end()
+  if start_point == end_point:
+    print("Oops, you entered the same location for origin and destination. Please modify.\n")
+    return set_start_and_end(start_point, end_point)
+  print(f"Looking for route from {start_point} to {end_point}... \n")
   return start_point, end_point
 
 def get_start():
@@ -49,6 +55,7 @@ def get_start():
   start_point_letter = input("Where are you coming from? Type in the corresponding letter: ")
   if start_point_letter in landmark_choices.keys():
     start_point = landmark_choices[start_point_letter]
+    print(f"You entered: {start_point}")
     return start_point
   else:
     print("Sorry, that's not a landmark we have data on. Let's try this again...")
@@ -62,6 +69,7 @@ def get_end():
   end_point_letter = input("Ok, where are you headed? Type in the corresponding letter: ")
   if end_point_letter in landmark_choices.keys():
     end_point = landmark_choices[end_point_letter]
+    print(f"You entered: {end_point}")
     return end_point
   else:
     print("Sorry, that's not a landmark we have data on. Let's try this again...")
@@ -75,23 +83,66 @@ def new_route(start_point = None, end_point = None):
   """
   start_point, end_point = set_start_and_end(start_point, end_point)
   shortest_route = get_route(start_point, end_point)
-  shortest_route_string = '\n'.join(shortest_route)
-  print(f"The shortest metro route from {start_point} to {end_point} is: \n{shortest_route_string}")
+  if shortest_route:
+    shortest_route_string = '\n'.join(shortest_route)
+    print(f"The shortest metro route from {start_point} to {end_point} is: \n{shortest_route_string}")
+  else:
+    print(f"Unfortunately, there is currently no skytrain path between {start_point} and {end_point}. It might be due to maintenance.\n")
+  again = input("Would you like to see another route? Enter y/n: \n")
+  if again == 'y':
+    show_landmarks()
+    new_route(start_point, end_point)
+
+def get_active_stations():
+  updated_metro = vc_metro
+  for station_under_construction in stations_under_construction:
+    for current_station, neighboring_stations in vc_metro.items():
+      if current_station != station_under_construction:
+        updated_metro[current_station] -= set(stations_under_construction)
+      else:
+        updated_metro[current_station] = set([])
+  return updated_metro
+
 
 def get_route(start_point, end_point):
-  """"""
+  """
+  return shortest route if exists, else returns None
+  """
   start_stations = vc_landmarks[start_point]
   end_stations = vc_landmarks[end_point]
   routes = []
+  
   for start_station in start_stations:
     for end_station in end_stations:
-      route = bfs(vc_metro, start_station, end_station)
+
+      if start_station == end_station:
+        print(f"Your origin and destination are near by and share the same station: {start_station}.\nYou can try walking or other modes of transportation. \n")
+        return ['No Metro Needed']
+      # updated metro system
+      metro_system = get_active_stations() if stations_under_construction else vc_metro
+      if stations_under_construction:
+        # use dfs to check if a possible route exists
+        possible_route = dfs(metro_system, start_station, end_station)
+
+      # use bfs to find all routes then shortest route
+      route = bfs(metro_system, start_station, end_station)
       if route:
         routes.append(route)
+  if possible_route == None:
+      return None
   shortest_route = min(routes, key = len)
   return shortest_route
 
+def show_landmarks():
+  see_landmarks = input("Would you like to see the list of landmarks again? Enter y/n: ")
+  if see_landmarks == 'y':
+    print(landmark_string)
+
+def goodbye():
+  print("Thanks for using SkyRoute!")
 
 # --end of helper functions--
 
 skyroute()
+
+
