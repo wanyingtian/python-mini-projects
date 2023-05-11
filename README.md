@@ -3,39 +3,39 @@ This is a collection of useful mini projects to learn python. Categorized by top
 
 ## 1. Python Basics
 #### Control Flow
-1. [Magic 8 Ball](magic8ball.py)
+1. [Magic 8 Ball](python_basics/magic8ball.py)
 * The Magic 8-Ball is a popular toy developed in the 1950s for fortune-telling or advice seeking.
 * Write a magic8ball.py Python program that can answer any “Yes” or “No” question with a different fortune each time it executes.
 
 #### Lists
-1. [Pizza List](pizza_list.py)
+1. [Pizza List](python_basics/pizza_list.py)
 * this script helps practice the basic list manipulations
 * the scenario is a pizza place trying to origanize their list of pizzas
 
 #### Loops
-1. [Haircut Loop](haircut_loop.py)
+1. [Haircut Loop](python_basics/haircut_loop.py)
 * practice basic list and loops
 * calculate metrics for a barbershop
 
 #### Functions
-1. [Easy Physics Functions](physics_functions.py)
+1. [Easy Physics Functions](python_basics/physics_functions.py)
 * some easy functions that help calculate some fundamental physical properties.
 
 #### Strings
-1. [Coded Correspondence](coded_correspondence/coded_correspondence.ipynb)
+1. [Coded Correspondence](python_basics/coded_correspondence/coded_correspondence.ipynb)
 * a codecademy practice project
 * encoding and decoding messages in string manipulations
 
 #### Dictionaries
-1. [Scrabble](scrabble_dict.py)
+1. [Scrabble](python_basics/scrabble_dict.py)
 * In this project, you will process some data from a group of friends playing scrabble.
 * You will use dictionaries to organize players, words, and points.
-2. [Abruptly Goblins Planner](abruptly_goblins_dict/Abruptly%20Goblins%20Planner.ipynb)
+2. [Abruptly Goblins Planner](python_basics/abruptly_goblins_dict/Abruptly%20Goblins%20Planner.ipynb)
 * a codecademy practice project
 * plan a game night using dictionaries
 
 #### Classes
-1. [Restaurant Class](restaurant_class.py)
+1. [Restaurant Class](python_basics/restaurant_class.py)
 * class applications in restaurant origanization
 * You will create 3 classes and access their methods, and use them to build a new business
 
@@ -58,7 +58,6 @@ This is a collection of useful mini projects to learn python. Categorized by top
 
 ### 2.2 Algorithms
 [Algorithms Notebook](data_structures_and_algorithms/algorithms.ipynb)
-- Big O Notations
 - Naive Pattern Search
 - Quick Sort
 - [Sorting Runtimes](data_structures_and_algorithms/sorted_books/)
